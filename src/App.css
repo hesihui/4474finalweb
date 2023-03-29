@@ -28,6 +28,21 @@
   color: #61dafb;
 }
 
+.nav-link {
+  font-size: 4em;
+    transition: all 5000ms;
+  color: black !important;
+}
+.nav-link:hover {
+  font-size:26px;
+  font-size-adjust: 20px;
+  color: black !important;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
