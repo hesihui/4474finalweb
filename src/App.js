@@ -12,6 +12,10 @@ import "./App.css";
 
 function App() {
   const [open, setOpen] = useState(false);
+  const [open1, setOpen1] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const [open3, setOpen3] = useState(false);
+  const [open4, setOpen4] = useState(false);
   return (
     <Container>
       <Row>
@@ -27,7 +31,7 @@ function App() {
           <Nav className="flex-column">
             <>
               <Button
-                className="btn-light"
+                className="btn-light btn-outline-light"
                 onClick={() => setOpen(!open)}
                 aria-controls="example-collapse-text"
                 aria-expanded={open}
@@ -43,105 +47,167 @@ function App() {
                 </Nav>
               </Collapse>
             </>
-            <Nav.Link href="#executiveSummary">
-              <h3>Executive Summary</h3>
-            </Nav.Link>
-            <Nav className="ml-4">
-              <Nav.Link href="#overview">Overview</Nav.Link>
-              <Nav.Link href="#motivation">Motivation</Nav.Link>
-            </Nav>
-            <Nav.Link href="#designPrinciples">
-              <h3>Navigational map</h3>
-            </Nav.Link>
-            <Nav.Link href="#designPrinciples">
-              <h3>Design Principles</h3>
-            </Nav.Link>
-            <Nav className="ml-4">
-              <ul>
-                <li>
-                  <Nav.Link href="#visibility">Visibility</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#consistency">Consistency</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#affordance">Affordance</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#colorContrast">Color and contrast</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#alignment">Alignment</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">Mapping</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">
-                    Iconic Representation
-                  </Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">Highlighting</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">Feedback</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">
-                    Accessibility
-                  </Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">Hierarchy</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">Readability</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">Fitts's Law</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">Forgiveness</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">
-                    Recognition over recall
-                  </Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">
-                    Progressive disclosure
-                  </Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">Control</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">
-                    Aesthetic-Usability Effect
-                  </Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">Constraints</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">Mimicry</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">Confirmation</Nav.Link>
-                </li>
-                <li>
-                  <Nav.Link href="#section1-subsection2">Causality</Nav.Link>
-                </li>
-              </ul>
-            </Nav>
-            <Nav.Link href="#section3">
-              <h3>Heuristic evaluation</h3>
-            </Nav.Link>
-            <Nav.Link href="#designPrinciples">
-              <h3>Thoughtful recommendations</h3>
-            </Nav.Link>
+            <>
+              <Button
+                className="btn-light btn-outline-light"
+                aria-controls="example-collapse-text"
+                aria-expanded={open}
+              >
+                <Nav.Link href="#executiveSummary">
+                  <h3>Navigational map</h3>
+                </Nav.Link>
+              </Button>
+            </>
+            <>
+              <Button
+                className="btn-light btn-outline-light"
+                onClick={() => setOpen1(!open1)}
+                aria-controls="example-collapse-text"
+                aria-expanded={open1}
+              >
+                <Nav.Link href="#executiveSummary">
+                  <h3>Design Principles</h3>
+                </Nav.Link>
+              </Button>
+              <Collapse in={open1}>
+                <Nav className="ml-4">
+                  <ul>
+                    <li>
+                      <Nav.Link href="#visibility">Visibility</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#consistency">Consistency</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#affordance">Affordance</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#alignment">Alignment</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#mapping">Mapping</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#feedback">Feedback</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#accessibility">Accessibility</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#fittsLaw">Fitts's Law</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#progressiveDis">
+                        Progressive disclosure
+                      </Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#control">Control</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#constraints">Constraints</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#confirmation">Confirmation</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#causality">Causality</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#gestaltLaw">Gestalt Law</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#familiarity">Familiarity</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#feedforward">Feedforward</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#chunking">Chunking</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#hickLaw">Hick’s law (p.84)</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#positiveTransfer">
+                        Positive Transfer (p.93)
+                      </Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#recognition">
+                        Recognition over recall
+                      </Nav.Link>
+                    </li>
+                  </ul>
+                </Nav>
+              </Collapse>
+            </>
+            <>
+              <Button
+                className="btn-light btn-outline-light"
+                onClick={() => setOpen2(!open2)}
+                aria-controls="example-collapse-text"
+                aria-expanded={open2}
+              >
+                <Nav.Link href="#executiveSummary">
+                  <h3>Heuristic evaluation</h3>
+                </Nav.Link>
+              </Button>
+              <Collapse in={open2}>
+                <Nav className="ml-4">
+                  <ul>
+                    <li>
+                      <Nav.Link href="#visibility">Visibility of System Status</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#matchSystemReal">Match Between the System and the Real World</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#userControl">User Control & Freedom</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#consistencyStand">Consistency and Standards</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#errorPrevent">Error Prevention</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#recognitionRecall">Recognition vs. Recall in User Interfaces</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#flexibilityEfficien">Flexibility and Efficiency of Use</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#aestheticMini">Aesthetic and Minimalist Design</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#helpUserRecognize">Help Users Recognize, Diagnose and Recover from Errors</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#helpDocumentation">Help & Documentation</Nav.Link>
+                    </li>
+                  </ul>
+                </Nav>
+              </Collapse>
+            </>
+            <>
+              <Button
+                className="btn-light btn-outline-light"
+                onClick={() => setOpen3(!open3)}
+                aria-controls="example-collapse-text"
+                aria-expanded={open3}
+              >
+                <Nav.Link href="#executiveSummary">
+                  <h3>Thoughtful recommendations</h3>
+                </Nav.Link>
+              </Button>
+              <Collapse in={open3}>
+                <Nav className="ml-4">
+                  <Nav.Link href="#overview">Overview</Nav.Link>
+                  <Nav.Link href="#motivation">Motivation</Nav.Link>
+                </Nav>
+              </Collapse>
+            </>
           </Nav>
         </Col>
 
