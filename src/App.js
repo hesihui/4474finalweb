@@ -9,6 +9,9 @@ import {
   Button,
 } from "react-bootstrap";
 import "./App.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import DropDown from "./Component/DropDown";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -16,33 +19,37 @@ function App() {
   const [open2, setOpen2] = useState(false);
   const [open3, setOpen3] = useState(false);
   const [open4, setOpen4] = useState(false);
-  // const colRef = useRef(null);
+  const [showButton, setShowButton] = useState(false);
+  const handleScroll = () => {
+    if (window.pageYOffset > 300) {
+      setShowButton(true);
+    } else {
+      setShowButton(false);
+    }
+  };
 
-  // useEffect(() => {
-  //   const col = colRef.current;
-  //   const container = col.parentNode;
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
-  //   function handleScroll() {
-  //     const containerRect = container.getBoundingClientRect();
-  //     const colRect = col.getBoundingClientRect();
-  //     const scrollY = window.scrollY;
-  //     if (scrollY > containerRect.top && scrollY < containerRect.bottom - colRect.height) {
-  //       col.style.position = 'fixed';
-  //       col.style.top = '0';
-  //     } else if (scrollY >= containerRect.bottom - colRect.height) {
-  //       col.style.position = 'absolute';
-  //       col.style.top = `${containerRect.height - colRect.height}px`;
-  //     } else {
-  //       col.style.position = 'static';
-  //       col.style.top = 'auto';
-  //     }
-  //   }
-
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
+  window.addEventListener("scroll", handleScroll);
+ 
   return (
     <Container>
+      <>
+        {showButton && (
+          <Button
+            className="back-to-top-button"
+            onClick={handleClick}
+            variant="dark"
+          >
+            <FontAwesomeIcon icon={faArrowUp} />
+          </Button>
+        )}
+      </>
       <Row>
         <Col>
           <header className="my-4">
@@ -261,7 +268,9 @@ function App() {
                       <Nav.Link href="#mgm">More Game Modes</Nav.Link>
                     </li>
                     <li>
-                      <Nav.Link href="#gui">Improvement on the Game User Interface</Nav.Link>
+                      <Nav.Link href="#gui">
+                        Improvement on the Game User Interface
+                      </Nav.Link>
                     </li>
                   </ul>
                 </Nav>
@@ -313,7 +322,9 @@ function App() {
           <Card className="my-4">
             <Card.Body>
               <Card.Title id="section2">Navigational Map</Card.Title>
-              <Card.Text className="text-justify"></Card.Text>
+              <Card.Text className="text-justify">
+              <DropDown />
+              </Card.Text>
             </Card.Body>
           </Card>
           <Card className="my-4">
@@ -955,7 +966,85 @@ function App() {
           <Card className="my-4">
             <Card.Body>
               <Card.Title id="section3">Thoughtful recommendations</Card.Title>
-              <Card.Text className="text-justify"></Card.Text>
+              <Card.Title id="asp">
+                <p>Advanced Setting Page</p>
+              </Card.Title>
+              <Card.Text className="text-justify">
+                {" "}
+                To increase user control and freedom, the list of settings is
+                expanded to allow players to customize their games to a larger
+                extent. The new settings page consists of three parts: audio,
+                video, and control. The audio part opens/closes the sound
+                effects and the background music; the video part toggles the
+                full screen and displays/hides the user interface component
+                based on the needs of the player (according to the minimalist
+                evaluation, experts may want to hide a part of the user
+                interface). The control part allows players to view all the
+                actions and their corresponding key bindings; at the same time,
+                players can alter the key bindings of each action to meet their
+                habits. This is an error-prevention technique to prevent players
+                from pressing the wrong keys.<br></br>All the choices will be
+                memorized (stored as an external file) so that players do not
+                need to set all the things again each time they enter the game,
+                which increases the efficiency of the user tasks.
+              </Card.Text>
+              <Card.Title id="gs">
+                <p>Garage System</p>
+              </Card.Title>
+              <Card.Text className="text-justify">
+                Players can use collectable tools to upgrade their karts’
+                attribute values to obtain improved performance. The upgrading
+                is restricted to limited ranges, which means that the karts will
+                reach their maximum status and are unable to continue upgrading.
+                In the garage system, players may also personalize the
+                decorations of the karts by using other cartoon figures or color
+                combinations.<br></br>Accordingly, there will be more
+                challenging maps since players are allowed to have upgraded
+                karts. To comply with the evaluation of the user control and the
+                error recovery, players can undo any upgrades of the karts since
+                it may sacrifice some other attributes.{" "}
+              </Card.Text>
+              <Card.Title id="vc">
+                <p>Virtual Community</p>
+              </Card.Title>
+              <Card.Text className="text-justify">
+                The virtual community can be accessed through the link or within
+                the game, which contains all the questions asked previously to
+                help players solve the problems that are either related to the
+                system errors or the strategic adoption. Moreover, some
+                potential or hard-to-discover features and techniques can be
+                shared and taught to improve other players’ game experiences.
+                <br></br>Reasonable labeling or categorizing the type of
+                questions is also necessary to increase the efficiency of use
+                since players can locate and find the answers more easily.{" "}
+              </Card.Text>
+              <Card.Title id="mgm">
+                <p>More Game Modes</p>
+              </Card.Title>
+              <Card.Text className="text-justify">
+                To expand user flexibility, more game modes are added for
+                different purposes. For instance, the “practice mode” is used to
+                practice certain maps without any countdown. Artificial
+                Intelligence can be applied to the game to expand the user goal:
+                it can also be challenging for expert players that are familiar
+                with the maps since the highest-difficulty AI tends to choose
+                the shortest path and has decent performance.{" "}
+              </Card.Text>
+              <Card.Title id="gui">
+                <p>Improvement on the Game User Interface</p>
+              </Card.Title>
+              <Card.Text className="text-justify">
+                To comply with the Recognition vs. Recall heuristics evaluation,
+                a small map that shows a part of the map with the current
+                location will be displayed on the right side of the screen so
+                that players can pay attention to certain locations that have
+                barriers or accelerators.<br></br>To prevent errors, after
+                selecting the kart and the map, a confirmation window will show
+                up before the player enters the game to make sure that the
+                decision is correct. Players can close it if they don’t need it.
+                <br></br>The text on the buttons will be modified to be
+                consistent.{" "}
+              </Card.Text>
             </Card.Body>
           </Card>
         </Col>
