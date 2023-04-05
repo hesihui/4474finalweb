@@ -43,6 +43,17 @@
   text-align: justify;
 }
 
+.col-container {
+  position: relative;
+  overflow: auto;
+  
+}
+
+.floating-col {
+  position: fixed;
+  z-index: 1;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
