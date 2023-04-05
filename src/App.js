@@ -64,8 +64,9 @@ function App() {
           <Nav className="flex-column">
             <>
               <Button
-                className="btn-light btn-outline-light"
+                
                 onClick={() => setOpen(!open)}
+                variant={open ? 'secondary' : 'light'}
                 aria-controls="example-collapse-text"
                 aria-expanded={open}
               >
@@ -86,14 +87,14 @@ function App() {
                 aria-controls="example-collapse-text"
                 aria-expanded={open}
               >
-                <Nav.Link href="#executiveSummary">
+                <Nav.Link href="#navimap">
                   <h3>Navigational map</h3>
                 </Nav.Link>
               </Button>
             </>
             <>
               <Button
-                className="btn-light btn-outline-light"
+                variant={open1 ? 'secondary' : 'light'}
                 onClick={() => setOpen1(!open1)}
                 aria-controls="example-collapse-text"
                 aria-expanded={open1}
@@ -177,7 +178,7 @@ function App() {
             </>
             <>
               <Button
-                className="btn-light btn-outline-light"
+                variant={open2 ? 'secondary' : 'light'}
                 onClick={() => setOpen2(!open2)}
                 aria-controls="example-collapse-text"
                 aria-expanded={open2}
@@ -243,7 +244,7 @@ function App() {
             </>
             <>
               <Button
-                className="btn-light btn-outline-light"
+                variant={open3 ? 'secondary' : 'light'}
                 onClick={() => setOpen3(!open3)}
                 aria-controls="example-collapse-text"
                 aria-expanded={open3}
@@ -321,7 +322,7 @@ function App() {
           </Card>
           <Card className="my-4">
             <Card.Body>
-              <Card.Title id="section2">Navigational Map</Card.Title>
+              <Card.Title id="navimap">Navigational Map</Card.Title>
               <Card.Text className="text-justify">
               <DropDown />
               </Card.Text>
