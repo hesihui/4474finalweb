@@ -12,13 +12,14 @@ import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import DropDown from "./Component/DropDown";
+import ImageMagnifier from "./Component/magnifier";
+import storyBoard from "./Component/assets/storyboard.png";
 
 function App() {
   const [open, setOpen] = useState(false);
   const [open1, setOpen1] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [open3, setOpen3] = useState(false);
-  const [open4, setOpen4] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const handleScroll = () => {
     if (window.pageYOffset > 300) {
@@ -36,7 +37,7 @@ function App() {
   };
 
   window.addEventListener("scroll", handleScroll);
- 
+
   return (
     <Container>
       <>
@@ -64,9 +65,8 @@ function App() {
           <Nav className="flex-column">
             <>
               <Button
-                
                 onClick={() => setOpen(!open)}
-                variant={open ? 'secondary' : 'light'}
+                variant={open ? "secondary" : "light"}
                 aria-controls="example-collapse-text"
                 aria-expanded={open}
               >
@@ -94,7 +94,7 @@ function App() {
             </>
             <>
               <Button
-                variant={open1 ? 'secondary' : 'light'}
+                variant={open1 ? "secondary" : "light"}
                 onClick={() => setOpen1(!open1)}
                 aria-controls="example-collapse-text"
                 aria-expanded={open1}
@@ -178,7 +178,7 @@ function App() {
             </>
             <>
               <Button
-                variant={open2 ? 'secondary' : 'light'}
+                variant={open2 ? "secondary" : "light"}
                 onClick={() => setOpen2(!open2)}
                 aria-controls="example-collapse-text"
                 aria-expanded={open2}
@@ -244,7 +244,7 @@ function App() {
             </>
             <>
               <Button
-                variant={open3 ? 'secondary' : 'light'}
+                variant={open3 ? "secondary" : "light"}
                 onClick={() => setOpen3(!open3)}
                 aria-controls="example-collapse-text"
                 aria-expanded={open3}
@@ -324,7 +324,12 @@ function App() {
             <Card.Body>
               <Card.Title id="navimap">Navigational Map</Card.Title>
               <Card.Text className="text-justify">
-              <DropDown />
+                <DropDown />
+                <ImageMagnifier
+                  src={storyBoard}
+                  width={"800px"}
+                  height={"400px"}
+                />
               </Card.Text>
             </Card.Body>
           </Card>
