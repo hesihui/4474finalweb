@@ -326,13 +326,13 @@ function App() {
               <Card.Title id="navimap">Navigational Map</Card.Title>
               <Card.Text className="text-justify">
                 {/* <DropDown /> */}
-                <h1>Story Board</h1>
+                <p>Story Board</p>
                 <ImageMagnifier
                   src={storyBoard}
                   width={"800px"}
                   height={"400px"}
                 />
-                <h1>Site Map</h1>
+                <p>Site Map</p>
                 <ImageMagnifier
                   src={siteMap}
                   width={"800px"}
