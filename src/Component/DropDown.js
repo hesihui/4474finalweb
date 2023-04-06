@@ -52,7 +52,7 @@ export default function DropDown() {
   return (
     <div className="container mt-3">
       <div>
-        <h1> {renderResult()}</h1>
+        <p> {renderResult()}</p>
       </div>
       <div className="mt-4">
         <select className="form-select" value={map} onChange={handleOnChange}>
