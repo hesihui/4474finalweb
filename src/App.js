@@ -464,6 +464,7 @@ function App() {
               <Card.Title id="game">Play the game</Card.Title>
               <Card.Text className="text-justify">
                 <GameFrame />
+                <p>please play it with full screen to get the best playing experience</p>
               </Card.Text>
             </Card.Body>
           </Card>
