@@ -55,7 +55,7 @@ function App() {
       <Row>
         <Col>
           <header className="my-4">
-            <h1>Final documentation -- CS4474</h1>
+            <h1>Final documentation -- CS4474 - Group 8</h1>
           </header>
           <hr></hr>
         </Col>
@@ -90,6 +90,17 @@ function App() {
               >
                 <Nav.Link href="#navimap">
                   <h3>Navigational map</h3>
+                </Nav.Link>
+              </Button>
+            </>
+            <>
+              <Button
+                className="btn-light btn-outline-light"
+                aria-controls="example-collapse-text"
+                aria-expanded={open}
+              >
+                <Nav.Link href="#tmap">
+                  <h3>In game track map</h3>
                 </Nav.Link>
               </Button>
             </>
@@ -278,6 +289,17 @@ function App() {
                 </Nav>
               </Collapse>
             </>
+            <>
+              <Button
+                className="btn-light btn-outline-light"
+                aria-controls="example-collapse-text"
+                aria-expanded={open}
+              >
+                <Nav.Link href="#github">
+                  <h3>Github repository</h3>
+                </Nav.Link>
+              </Button>
+            </>
           </Nav>
           {/* </div> */}
         </Col>
@@ -319,7 +341,6 @@ function App() {
                 these issues, we believe our redesigned game can create a more
                 immersive and enjoyable experience for players
               </Card.Text>
-              <DropDown />
             </Card.Body>
           </Card>
           <Card className="my-4">
@@ -339,6 +360,16 @@ function App() {
                   width={"800px"}
                   height={"500px"} zoomLevel={"2"}
                 />
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card className="my-4">
+            <Card.Body>
+              <Card.Title id="tmap">In game track map</Card.Title>
+              <Card.Text className="text-justify">
+                
+                
+              <DropDown />
               </Card.Text>
             </Card.Body>
           </Card>
@@ -1059,6 +1090,14 @@ function App() {
                 decision is correct. Players can close it if they don’t need it.
                 <br></br>The text on the buttons will be modified to be
                 consistent.{" "}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card className="my-4">
+            <Card.Body>
+              <Card.Title id="github">Github repository</Card.Title>
+              <Card.Text className="text-justify">
+              <a href="https://github.com/uwohci23/group8" target="_blank">https://github.com/uwohci23/group8</a>
               </Card.Text>
             </Card.Body>
           </Card>
