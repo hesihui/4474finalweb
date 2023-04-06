@@ -14,6 +14,7 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import DropDown from "./Component/DropDown";
 import ImageMagnifier from "./Component/magnifier";
 import storyBoard from "./Component/assets/storyboard.png";
+import siteMap from "./Component/assets/siteMap.png"
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -324,11 +325,18 @@ function App() {
             <Card.Body>
               <Card.Title id="navimap">Navigational Map</Card.Title>
               <Card.Text className="text-justify">
-                <DropDown />
+                {/* <DropDown /> */}
+                <h1>Story Board</h1>
                 <ImageMagnifier
                   src={storyBoard}
                   width={"800px"}
                   height={"400px"}
+                />
+                <h1>Site Map</h1>
+                <ImageMagnifier
+                  src={siteMap}
+                  width={"800px"}
+                  height={"500px"} zoomLevel={"2"}
                 />
               </Card.Text>
             </Card.Body>
