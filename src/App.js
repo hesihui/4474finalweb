@@ -15,6 +15,7 @@ import DropDown from "./Component/DropDown";
 import ImageMagnifier from "./Component/magnifier";
 import storyBoard from "./Component/assets/storyboard.png";
 import siteMap from "./Component/assets/siteMap.png";
+import GameFrame from "./Component/gameFrame";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -115,6 +116,17 @@ function App() {
               >
                 <Nav.Link href="#tmap">
                   <h3>In game track map</h3>
+                </Nav.Link>
+              </Button>
+            </>
+            <>
+              <Button
+                className="btn-light btn-outline-light"
+                aria-controls="example-collapse-text"
+                aria-expanded={open}
+              >
+                <Nav.Link href="#game">
+                  <h3>Play the game</h3>
                 </Nav.Link>
               </Button>
             </>
@@ -310,7 +322,7 @@ function App() {
                 aria-expanded={open}
               >
                 <Nav.Link href="#github">
-                  <h3>Github repository</h3>
+                  <h3>Github repository & Game</h3>
                 </Nav.Link>
               </Button>
             </>
@@ -444,6 +456,14 @@ function App() {
               <Card.Title id="tmap">In game track map</Card.Title>
               <Card.Text className="text-justify">
                 <DropDown />
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card className="my-4">
+            <Card.Body>
+              <Card.Title id="game">Play the game</Card.Title>
+              <Card.Text className="text-justify">
+                <GameFrame />
               </Card.Text>
             </Card.Body>
           </Card>
@@ -1172,7 +1192,10 @@ function App() {
               <Card.Title id="github">Github repository</Card.Title>
               <Card.Text className="text-justify">
                 <a href="https://github.com/uwohci23/group8" target="_blank">
-                  https://github.com/uwohci23/group8
+                  Github Repository
+                </a>
+                <a href="https://dev593.d3t2m33h5u8s96.amplifyapp.com/" target="_blank">
+                  Game
                 </a>
               </Card.Text>
             </Card.Body>
