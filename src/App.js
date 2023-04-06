@@ -1195,6 +1195,7 @@ function App() {
                 <a href="https://github.com/uwohci23/group8" target="_blank">
                   Github Repository
                 </a>
+                <br></br>
                 <a href="https://dev593.d3t2m33h5u8s96.amplifyapp.com/" target="_blank">
                   Game
                 </a>
