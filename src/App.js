@@ -319,13 +319,14 @@ function App() {
                 these issues, we believe our redesigned game can create a more
                 immersive and enjoyable experience for players
               </Card.Text>
+              <DropDown />
             </Card.Body>
           </Card>
           <Card className="my-4">
             <Card.Body>
               <Card.Title id="navimap">Navigational Map</Card.Title>
               <Card.Text className="text-justify">
-                {/* <DropDown /> */}
+                
                 <p>Story Board</p>
                 <ImageMagnifier
                   src={storyBoard}
