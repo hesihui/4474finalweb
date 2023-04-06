@@ -14,13 +14,14 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import DropDown from "./Component/DropDown";
 import ImageMagnifier from "./Component/magnifier";
 import storyBoard from "./Component/assets/storyboard.png";
-import siteMap from "./Component/assets/siteMap.png"
+import siteMap from "./Component/assets/siteMap.png";
 
 function App() {
   const [open, setOpen] = useState(false);
   const [open1, setOpen1] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [open3, setOpen3] = useState(false);
+  const [open4, setOpen4] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const handleScroll = () => {
     if (window.pageYOffset > 300) {
@@ -77,16 +78,29 @@ function App() {
               </Button>
               <Collapse in={open}>
                 <Nav className="ml-4">
-                  <Nav.Link href="#overview">Overview</Nav.Link>
-                  <Nav.Link href="#motivation">Motivation</Nav.Link>
+                  <ul>
+                    <li>
+                      <Nav.Link href="#overview">Overview</Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#sumog">
+                        Summary of the Original game
+                      </Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link href="#motivation">Motivation</Nav.Link>
+                    </li>
+                  </ul>
                 </Nav>
               </Collapse>
             </>
             <>
               <Button
+                onClick={() => setOpen(!open4)}
+                variant={open4 ? "secondary" : "light"}
                 className="btn-light btn-outline-light"
                 aria-controls="example-collapse-text"
-                aria-expanded={open}
+                aria-expanded={open4}
               >
                 <Nav.Link href="#navimap">
                   <h3>Navigational map</h3>
@@ -313,19 +327,81 @@ function App() {
               </Card.Title>
               <Card.Text className="text-justify">
                 {" "}
-                Our application is a redesigned car race game. The purpose of
-                redesigning is to create an engaging and immersive experience
-                for players with adding careful consideration of game mechanics,
-                user interface and graphics. There are many intuitive user
-                interfaces such as icon, windows, text, control wheel, timer,
-                etc. are added to navigate players to select different functions
-                of the game. To allow players to quickly learn the game
-                mechanics, tutorial mode is added in the game. There are many
-                pop-ups instruction windows in the tutorial to provide clear
-                feedback to players. The game mechanics of our game involve
-                controlling the speed and direction of the car using mouse or
-                keyboard. The game also includes nitro boosts as power-ups
-                function to give players and advantage during the race.
+                Our application is a revamped car racing game, designed to
+                provide players with an engaging and immersive experience. We
+                have taken into account various factors, such as game mechanics,
+                user interface, and graphics, to create a game that is not only
+                visually appealing but also easy to navigate and fun to play.{" "}
+                <br></br>To ensure a seamless gaming experience, we have added
+                several intuitive user interfaces, including icons, windows,
+                text, control wheels, timers, etc. These interfaces enable
+                players to easily select different functions of the game and
+                maintain a consistent experience throughout. <br></br>We
+                understand the importance of a tutorial mode in helping players
+                understand the game mechanics. Hence, we have included a
+                comprehensive tutorial mode that provides clear instructions
+                through pop-up windows. This feature allows players to quickly
+                learn the game mechanics and start playing with ease. <br></br>
+                We also provide players with the option to fully customize the
+                game by allowing them to choose the car, map, and difficulty
+                level of their choice. This feature not only enhances the
+                overall experience but also prevents players from getting
+                frustrated by the game's difficulty. <br></br>In terms of game
+                mechanics, players can control the speed and direction of their
+                car using a mouse or keyboard. We have also added nitro boosts
+                as storable power-ups to give players a strategic function
+                during the race. <br></br>In summary, our redesigned car racing
+                game takes into account various HCI principles to provide
+                players with a superior gaming experience. We have addressed the
+                drawbacks of the original game and incorporated various features
+                to ensure that players have a fun, engaging, and immersive
+                experience.
+              </Card.Text>
+              <Card.Title id="sumog">
+                <p>Summary of the Original game </p>
+              </Card.Title>
+              <Card.Text className="text-justify">
+                The original game had several functions implemented to increase
+                the usability of the game. For example, players could alter the
+                audio and visual settings based on their preferences. They could
+                turn on and off the background music and sound effects in the
+                main menu as well as during gameplay. There were also different
+                cars and maps for players to choose from so they could have
+                different experiences by playing with different cars or maps.
+                Moreover, there were various kinds of interactions when players
+                were driving, such as the accelerator, fences, and outside land.
+                These interactions were used to give players a dynamic gaming
+                experience <br></br>However, there are a few drawbacks of the
+                original game which could be improved in terms of user
+                experiences and HCI principles: <br></br>
+                <ul>
+                  <li>
+                    Firstly, the difficulty selection setting was unclear and
+                    unreasonable. The original difficulty selection was to
+                    choose different cars, which is unreasonable because the
+                    operability of the cars should only be a factor in the
+                    difficulty selection. The difficulty selection should
+                    involve time limitations and the number of laps required to
+                    complete the race.
+                  </li>
+                  <li>
+                    Secondly, player control methods were very limited. Players
+                    only can use keyboards to control the car. Although there
+                    were a few interactions, such as using the accelerator to
+                    increase speed while driving, players had no strategic
+                    thinking during the game as the game lacked tools they could
+                    use at any time. Moreover, the game could easily become dull
+                    if the players were operationally skilled.
+                  </li>
+                  <li>
+                    Thirdly, the goal of the original game was vague, which led
+                    to a low positive gaming experience. Players only needed to
+                    finish one lap for all difficulty levels, and their scores
+                    would not be recorded. This lack of motivation would cause
+                    players to lose interest in the game after finishing each
+                    difficulty.
+                  </li>
+                </ul>
               </Card.Text>
               <Card.Title id="motivation">
                 <p>Motivation</p>
@@ -347,7 +423,6 @@ function App() {
             <Card.Body>
               <Card.Title id="navimap">Navigational Map</Card.Title>
               <Card.Text className="text-justify">
-                
                 <p>Story Board</p>
                 <ImageMagnifier
                   src={storyBoard}
@@ -358,7 +433,8 @@ function App() {
                 <ImageMagnifier
                   src={siteMap}
                   width={"800px"}
-                  height={"500px"} zoomLevel={"2"}
+                  height={"500px"}
+                  zoomLevel={"2"}
                 />
               </Card.Text>
             </Card.Body>
@@ -367,9 +443,7 @@ function App() {
             <Card.Body>
               <Card.Title id="tmap">In game track map</Card.Title>
               <Card.Text className="text-justify">
-                
-                
-              <DropDown />
+                <DropDown />
               </Card.Text>
             </Card.Body>
           </Card>
@@ -1097,7 +1171,9 @@ function App() {
             <Card.Body>
               <Card.Title id="github">Github repository</Card.Title>
               <Card.Text className="text-justify">
-              <a href="https://github.com/uwohci23/group8" target="_blank">https://github.com/uwohci23/group8</a>
+                <a href="https://github.com/uwohci23/group8" target="_blank">
+                  https://github.com/uwohci23/group8
+                </a>
               </Card.Text>
             </Card.Body>
           </Card>
